@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import banner from "../assets/images/banner.jpg";
+import bg_about from "../assets/images/about-bg.jpg";
+import bg_business from "../assets/images/bussiness-bg.png";
+import plugin_bg from "../assets/images/plugin-bg.png";
+import bg_service2 from "../assets/images/service-bg2.jpg";
+import bg_service3 from "../assets/images/service-bg3.jpg";
+import bg_news from "../assets/images/news-bg.jpg";
+---
+
+<BaseLayout pageTitle="首页">
+  <Image
+    src={banner}
+    alt="banner"
+    class="w-screen min-h-[350px] object-cover"
+  />
+  <!-- 关于我们 -->
+  <section class="md:py-20 py-10 bg-white">
+    <div class="md:w-[1200px] m-auto">
+      <div class="flex items-center md:ml-0 ml-4">
+        <h1 class="text-4xl text-[#2c2d2f] font-semibold">关于我们</h1>
+        <h2 class="ml-4 text-2xl text-[#969DAF] font-normal">About Us</h2>
+      </div>
+
+      <div class="mt-10 md:h-[458px] relative">
+        <Image
+          src={bg_about}
+          alt="about"
+          class="md:block hidden absolute w-[680px] h-[384px] top-0 left-0 z-10 bg-cover bg-center object-cover"
+        />
+        <div
+          class="md:absolute md:w-[680px] md:h-[384px] bottom-0 right-0 bg-[#F6F7F9] md:pl-[233px] md:pr-[63px] p-5 md:text-base text-xl flex items-center text-[#5C6271]"
+        >
+          <p class="text-justify">
+            我们为您提供专业的软件开发服务，让您的工作更高效、更轻松。<br />
+            <br />
+             我们的软件开发团队具有丰富的经验和技能，能够为您提供高质量、高效的软件开发解决方案。<br
+            />
+            <br />
+             我们的软件开发服务涵盖了许多领域，包括移动应用程序开发、Web应用程序开发、API开发等。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 业务领域 -->
+  <section class="md:py-20 py-10 bg-[#F6F7F9]">
+    <div class="md:w-[1200px] m-auto">
+      <div class="flex items-center md:ml-0 ml-4">
+        <h1 class="text-4xl text-[#2c2d2f] font-semibold">业务领域</h1>
+        <h2 class="ml-4 text-2xl text-[#969DAF] font-normal">Business Area</h2>
+      </div>
+      <div class="mt-10 flex gap-x-5">
+        <div class="flex-1 grid md:grid-cols-2 gap-5">
+          <div class="bg-white py-[15px] px-8">
+            <div class="text-[#2C2D2F] text-2xl pt-8 pr-8 relative">
+              <div class="absolute text-6xl top-0 left-0 text-[#F6F7F9]">
+                01
+              </div>
+              <h3 class="relative z-10 md:text-2xl text-3xl">软件开发</h3>
+            </div>
+            <div class="mt-5 text-[#A5A6AB] md:text-base text-xl">
+              我们为您提供专业的软件开发服务，让您的工作更高效、更轻松。我们的软件开发团队具有丰富的经验和技能，能够为您提供高质量、高效的软件开发解决方案。
+              包括移动应用程序开发、Web应用程序开发、API开发等。
+            </div>
+          </div>
+          <div class="bg-white py-[15px] px-8">
+            <div class="text-[#2C2D2F] text-2xl pt-8 pr-8 relative">
+              <div class="absolute text-6xl top-0 left-0 text-[#F6F7F9]">
+                02
+              </div>
+              <h3 class="relative z-10 md:text-2xl text-3xl">接口服务</h3>
+            </div>
+            <div class="mt-5 text-[#A5A6AB] md:text-base text-xl">
+              我们为您提供高质量的接口服务，让您与现有系统更好地集成。我们的接口服务能够帮助您实现不同系统之间的数据交换和整合，让您的工作更加高效。
+              包括API接口、数据库接口、文件接口等。
+            </div>
+          </div>
+          <div class="bg-white py-[15px] px-8">
+            <div class="text-[#2C2D2F] text-2xl pt-8 pr-8 relative">
+              <div class="absolute text-6xl top-0 left-0 text-[#F6F7F9]">
+                03
+              </div>
+              <h3 class="relative z-10 md:text-2xl text-3xl">建站服务</h3>
+            </div>
+            <div class="mt-5 text-[#A5A6AB] md:text-base text-xl">
+              我们为您提供专业的网站建设服务，让您拥有一个美观、实用的网站。我们的网站建设团队具有丰富的经验和技能，能够为您提供高质量、高效的网站建设解决方案。
+              包括网站设计、网站开发、搜索引擎优化等。
+            </div>
+          </div>
+          <div class="bg-white py-[15px] px-8">
+            <div class="text-[#2C2D2F] text-2xl pt-8 pr-8 relative">
+              <div class="absolute text-6xl top-0 left-0 text-[#F6F7F9]">
+                04
+              </div>
+              <h3 class="relative z-10 md:text-2xl text-3xl">营销自动化平台</h3>
+            </div>
+            <div class="mt-5 text-[#A5A6AB] md:text-base text-xl">
+              我们为您提供自动化营销平台，让您轻松实现营销自动化。我们的自动化营销平台具有丰富的功能，能够帮助您自动化各种营销活动，例如电子邮件营销、社交媒体营销、搜索引擎优化等。
+              包括营销策略、营销工具、数据分析等。
+            </div>
+          </div>
+        </div>
+        <Image
+          class="bg-blue-200 w-[320px] object-cover md:block hidden"
+          src={bg_business}
+          alt="businsess_area_img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品服务 -->
+  <section class="md:py-20 py-10 md:bg-white bg-[#F6F7F9]">
+    <div class="md:w-[1200px] m-auto">
+      <div class="flex items-center md:ml-0 ml-4">
+        <h1 class="text-4xl text-[#2c2d2f] font-semibold">产品服务</h1>
+        <h2 class="ml-4 text-2xl text-[#969DAF] font-normal">
+          Product Services
+        </h2>
+      </div>
+      <div class="mt-10 flex md:flex-row flex-col gap-6 justify-between">
+        <div
+          class="flex-1 flex flex-col h-[440px] md:shadow-md md:rounded-lg overflow-hidden bg-white"
+        >
+          <Image
+            src={plugin_bg}
+            alt="Zblog主题、插件池_bg"
+            class="md:block flex-1 object-cover h-[240px] hover:transform hover:scale-110 origin-bottom transition-all"
+          />
+          <div class="md:h-[200px] md:p-4 p-8">
+            <h3 class="md:text-xl text-3xl text-[#2C2D2F]">
+              <a href="/dev_pool/" class="hover:text-blue-500">Zblog主题、插件池</a>
+            </h3>
+            <div class="mt-3 md:text-base text-xl text-[#A5A6AB]">
+              Zblog是一款基于ASP.NET/PHP的内容管理系统框架,提供了丰富的主题和插件功能,我们使用Zblog提供的API轻松地进行主题和插件的开发和定制,以提高CMS系统的质量和功能。
+              我们对主题和插件不断丰富,以用户为本增强用户体验为主。
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex-1 flex flex-col h-[440px] md:shadow-md md:rounded-lg overflow-hidden bg-white"
+        >
+          <Image
+            src={bg_service2}
+            alt="企业级CRM 服务内容_bg"
+            class="md:block flex-1 object-cover h-[240px] hover:transform hover:scale-110 origin-bottom transition-all"
+          />
+          <div class="md:h-[200px] md:p-4 p-8">
+            <h3 class="md:text-xl text-3xl text-[#2C2D2F]">
+              企业级CRM 服务内容
+            </h3>
+            <div class="mt-3 md:text-base text-xl text-[#A5A6AB]">
+              企业级CRM提供全面的数据分析和营销自动化功能，帮助企业更好地管理客户信息、销售机会、合同和发票等。该系统允许用户创建、编辑和查看客户信息等。
+              该系统支持多种分析报告，包括客户分析、销售机会分析、Marketing
+              ROI分析等
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex-1 flex flex-col h-[440px] md:shadow-md md:rounded-lg overflow-hidden bg-white"
+        >
+          <Image
+            src={bg_service3}
+            alt="智慧物流管理平台_bg"
+            class="md:block flex-1 object-cover h-[240px] hover:transform hover:scale-110 origin-bottom transition-all"
+          />
+          <div class="md:h-[200px] md:p-4 p-8">
+            <h3 class="md:text-xl text-3xl text-[#2C2D2F]">智慧物流管理平台</h3>
+            <div class="mt-3 md:text-base text-xl text-[#A5A6AB]">
+              智慧物流管理平台允许用户通过手机或平板电脑远程监控和调度物流车辆。用户可以通过设置自动化规则来控制物流车辆的出发时间和目的地，从而提高物流效率和减少车辆的空驶率。
+              该系统支持多种物流车辆，包括货运卡车、公交车、出租车等
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新闻动态 -->
+  <section class="md:py-20 py-10 bg-[#F6F7F9]">
+    <div class="md:w-[1200px] m-auto">
+      <div class="flex items-center md:ml-0 ml-4">
+        <h1 class="text-4xl text-[#2c2d2f] font-semibold">新闻动态</h1>
+        <h2 class="ml-4 text-2xl text-[#969DAF] font-normal">News Updates</h2>
+      </div>
+      <div class="mt-10 flex justify-between">
+        <Image
+          src={bg_news}
+          alt="新闻_bg"
+          class="md:block hidden w-[586px] h-[420px] object-cover"
+        />
+        <div class="flex-1 md:ml-[95px] space-y-8">
+          <div class="md:bg-transparent bg-white md:p-0 p-8">
+            <div class="text-[#2C2D2F] md:text-2xl text-3xl">
+              人工智能助手为制造业企业提高生产效率
+            </div>
+            <div class="text-[#A5A6AB] mt-4 md:text-base text-xl">
+              随着人工智能技术的发展，越来越多的智能助手被应用到制造业中，以提高生产效率和降低生产成本。例如，一种名为“智能生产线”的系统，通过实时监控生产线上的设备运行状态，并根据传感器数据自动调整生产参数，从而提高了生产效率，降低了设备故障率。
+            </div>
+          </div>
+          <div class="md:bg-transparent bg-white md:p-0 p-8">
+            <div class="text-[#2C2D2F] md:text-2xl text-3xl">
+              智慧物流平台助力快递业智能化发展
+            </div>
+            <div class="text-[#A5A6AB] mt-4 md:text-base text-xl">
+              物流业是社会生活中的重要环节，近年来，智慧物流平台的发展越来越受到重视。例如，一种名为“物流调度管理系统”的智慧物流平台，通过大数据分析和云计算技术，实现了对物流车辆的智能调度，从而提高了物流效率，降低了运输成本。
+            </div>
+          </div>
+          <div class="md:bg-transparent bg-white md:p-0 p-8">
+            <div class="text-[#2C2D2F] md:text-2xl text-3xl">
+              人工智能技术助力医疗诊断
+            </div>
+            <div class="text-[#A5A6AB] mt-4 md:text-base text-xl">
+              医疗诊断是医学领域中的重要环节，近年来，人工智能技术在医疗诊断中的应用越来越广泛。例如，一种名为“智能诊断系统”的系统，通过分析患者的体检数据和临床表现，自动生成诊断结果，从而提高了诊断准确性和效率。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="/"
+        class="bg-white mt-4 text-center p-4 text-xl justify-center md:hidden flex"
+      >
+        查看更多
+      </a>
+    </div>
+  </section>
+</BaseLayout>

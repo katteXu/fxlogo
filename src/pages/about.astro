@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import banner from "../assets/images/banner.jpg";
+import about_banner from '../assets/images/about-banner.jpg';
+---
+
+<BaseLayout pageTitle="关于我们">
+  <Image src={banner} alt="banner" class="w-screen min-h-[350px] max-h-[500px] object-cover" />
+  <section class="md:py-20 py-10 md:bg-white bg-[#F6F7F9] w-screen">
+    <div class="md:w-[1200px] m-auto">
+      <div class="flex items-center md:ml-0 ml-4">
+        <h1 class="text-4xl text-[#2c2d2f] font-semibold">关于我们</h1>
+        <h2 class="ml-4 text-2xl text-[#969DAF] font-normal">About Us</h2>
+      </div>
+ 
+      <div class="flex md:flex-row flex-col mt-10 flex-wrap bg-white md:p-0 p-8">
+        <p class="flex-1 text-[#969DAF] font-normal text-justify md:text-base text-xl">
+          我们是一家致力于提供智慧解决方案的公司，专注于为不同行业提供高质量、高效率的智能服务。我们拥有一支充满热情和专业的团队，始终秉持“以客户需求为中心”的服务理念，致力于为用户提供最优质、最贴心的服务。
+          我们的业务涵盖了许多领域，包括人工智能助手、智慧物流平台、人工智能诊断、智慧旅游平台、智慧教育平台等。通过这些智能平台，我们可以为用户提供更加便捷、更加高效的服务，从而促进各领域的行业发展，推动社会进步。
+          我们始终坚持质量第一的原则，不断完善我们的产品和服务，为用户提供最优质、最专业的智慧解决方案。同时，我们积极与行业专家合作，不断提升我们的技术水平和服务质量，为用户提供更加全面、更加深入的服务。
+          最后，我们欢迎各种合作机会，期待与更多的企业和组织建立长期稳定的合作关系，共同推动社会的进步和发展。
+        </p>
+
+        <Image src={about_banner} alt="关于我们" class="w-[430px] h-[300px] md:ml-10 md:mt-0 mt-10 object-cover"/>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

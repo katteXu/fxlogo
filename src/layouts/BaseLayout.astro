@@ -1,0 +1,64 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  /** 页面title */
+  pageTitle: string;
+  /** 页面seo tdk */
+  meta?: {
+    title?: string;
+    keywords?: string;
+    description?: string;
+  };
+}
+
+const default_meta = {
+  title: "菲心宝互联网科技",
+  keywords:
+    "人工智能,智慧物流,全景图,自动化,现代化编程语言Rust,科技,zblog网站主题/插件",
+  description:
+    "菲心宝互联网科技致力于打造人性的科技主题,让开发建站更愉快,更轻松,我们以人工智能引领智慧物流时代,通过全景图可视化场景,为您提提升学习、生活、工作获取信息的效率,引领科技发展的潮流",
+}
+
+let {
+  pageTitle,
+  meta,
+} = Astro.props;
+
+meta = { ...default_meta, ...meta };
+---
+
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content={meta.keywords} />
+    <meta name="description" content={meta.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{meta.title}-{pageTitle}</title>
+    <link rel="sitemap" href="/sitemao-index.xml" />
+    <ViewTransitions />
+    
+    {
+      import.meta.env.PROD &&
+      <script>
+        var _hmt = _hmt || [];
+        (function () {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?490d4122faaef0327f73d88df2997438";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    }
+  </head>
+  <body class="bg-[#D5D6DC] flex flex-col min-h-screen">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

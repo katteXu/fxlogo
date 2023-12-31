@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import qrcode_img from "../assets/images/qrcode.png";
+import babh_img from "../assets/babh.png";
+---
+
+<!-- 底部 -->
+<footer class="md:py-20 py-10 bg-gray-800 mt-auto">
+  <section class="w-[1200px] m-auto md:flex space-x-[150px] hidden">
+    <div>
+      <div class="text-white text-xl font-medium">关于我们</div>
+      <ul class="list-none p-0 m-0 mt-6 text-white space-y-3">
+        <li>关于我们</li>
+        <li>企业文化</li>
+        <li>合作伙伴</li>
+        <li>加入我们</li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-white text-xl font-medium">产品业务</div>
+      <ul class="list-none p-0 m-0 mt-6 text-white space-y-3">
+        <li>全景图</li>
+        <li>主题服务</li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-white text-xl font-medium">联系我们</div>
+      <ul class="list-none p-0 m-0 mt-6 text-white space-y-3">
+        <li>商业合作</li>
+        <li>微信公众号</li>
+        <li>B站</li>
+        <li>知乎</li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-white text-xl font-medium">新闻资讯</div>
+      <ul class="list-none p-0 m-0 mt-6 text-white space-y-3">
+        <li>行业新闻</li>
+        <li>公司新闻</li>
+      </ul>
+    </div>
+
+    <Image
+      src={qrcode_img}
+      alt="qrcode"
+      class="w-36 h-36 bg-white !ml-auto flex justify-center items-center text-[#333333] bg-cover"
+    />
+  </section>
+  <div
+    class="text-center md:mt-8 text-white flex justify-center flex-wrap items-center"
+  >
+    <span>© 2023 北京菲心宝互联网技术部 版权所有</span>
+    <a href="https://beian.miit.gov.cn/" class="hover:text-blue-500 ml-4"
+      >京ICP备2023040384号-1</a
+    >
+    <a
+      class="ml-4 flex justify-center items-center hidden"
+      href="https://beian.mps.gov.cn/#/query/webSearch?code=11010502054389"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <Image src={babh_img} alt="备案标号图标" class="h-4 w-4" />
+      <span class="ml-1">京公网安备11010502054389</span>
+    </a>
+  </div>
+</footer>

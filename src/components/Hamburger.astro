@@ -1,0 +1,51 @@
+---
+
+---
+
+<style>
+  /* 导航样式 */
+  .hamburger {
+    padding-top: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #3d86ef;
+  }
+</style>
+
+<div class="hamburger md:hidden block ml-auto">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menu = document.querySelector("nav ul");
+    const menu_mask = document.querySelector("nav");
+    document.querySelector(".hamburger").addEventListener("click", function () {
+      menu.classList.remove("-left-[300px]");
+      menu_mask.classList.add("show-menu");
+    });
+
+    menu_mask.addEventListener("click", function (e) {
+      if (menu_mask == e.target) {
+        menu.classList.add("-left-[300px]");
+        menu_mask.classList.remove("show-menu");
+      }
+    });
+
+    menu.addEventListener("click", function (e) {
+      menu.querySelectorAll("a").forEach((item) => {
+        item.classList.remove("text-blue-500");
+      });
+      const target = e.target as HTMLElement;
+      target.classList.add("text-blue-500");
+    });
+  });
+</script>
