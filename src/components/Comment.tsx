@@ -13,7 +13,7 @@ const Twikoo: React.FC = () => {
       const initScript = document.createElement("script");
       initScript.innerHTML = `
             twikoo.init({
-              envId: "https://helpful-lokum-1c1312.netlify.app/.netlify/functions/twikoo",
+              envId: "https://comment.fxlogo.com/.netlify/functions/twikoo",
               el: '#twikoo-comment'
             });
           `;
