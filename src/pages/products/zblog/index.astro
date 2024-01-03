@@ -2,9 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import plugin_bg from "@assets/images/plugin-bg.png";
-import screenshot_20231114 from "@assets/images/20231114-screenshot.png";
-import screenshot_20231204 from "@assets/images/20231204-screenshot.png";
-import screenshot_20231124 from "@assets/images/20231124-screenshot.jpg";
+import default_image from "@assets/images/default-image.png";
 import { getCollection } from "astro:content";
 
 // 产品内容
@@ -31,24 +29,33 @@ const products = await getCollection("products");
                 href={`/products/zblog/${product.slug}`}
                 class="bg-white md:w-[386px] flex flex-col justify-center shadow-md relative overflow-hidden"
               >
-                <Image
-                  src={product.data.image.url as ImageMetadata}
-                  alt={product.data.image.alt}
-                  class="h-[220px] w-full bg-gray-200 align-middle object-cover"
-                />
-                <div class="p-4 flex-col flex-1">
+                {product.data.image ? (
+                  <Image
+                    src={product.data.image.url as ImageMetadata}
+                    alt={product.data.image.alt}
+                    class="h-[220px] w-full bg-white align-middle object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={default_image}
+                    alt="暂无图片"
+                    class="h-[220px] w-full bg-gray-200 align-middle object-contain"
+                  />
+                )}
+
+                <div class="p-4 flex flex-col flex-1 gap-4">
                   <h2 class="text-2xl text-[#2C2D2F]">{product.data.title}</h2>
-                  <p class="text-lg text-[#A5A6AB] mt-4">
+                  <p class="text-lg text-[#A5A6AB] ">
                     {product.data.description}
                   </p>
-                  <div class="mt-2 flex flex-wrap gap-2">
+                  <div class="flex flex-wrap gap-2">
                     {product.data.tags.map((tag) => (
                       <span class="bg-[#3D86EF] text-[#fff] px-3 py-1 rounded-md">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div class="mt-5 flex items-center text-[#A5A6AB]">
+                  <div class="mt-auto flex items-center text-[#A5A6AB]">
                     <span>作者 {product.data.author}</span>
                     <time class="ml-auto">发布 {product.data.date}</time>
                   </div>

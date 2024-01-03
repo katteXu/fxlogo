@@ -1,0 +1,68 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Vote from "@components/Vote.tsx";
+import Comment from "@components/Comment.tsx";
+interface Props {
+  frontmatter: {
+    id: number;
+    title: string;
+    description: string;
+    tags: string[];
+    date: string;
+    author: string;
+    image?: {
+      url: ImageMetadata;
+      alt: string;
+    };
+    category: string;
+    release: boolean;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <section class="md:py-32 py-20 md:bg-gray-200">
+    <div class="md:w-[1440px] m-auto p-10 bg-white">
+      <h1 class="text-4xl font-semibold">{frontmatter.title}</h1>
+      <h2 class="text-lg text-[#2C2D2F] mt-4">
+        {frontmatter.description}
+      </h2>
+      <div class="flex mt-2 space-x-8">
+        <p>发布日期：<span>{frontmatter.date}</span></p>
+        <p>作者：<span>{frontmatter.author}</span></p>
+        <p>浏览：<span id="twikoo_visitors">0</span></p>
+      </div>
+
+      <div class="flex mt-4 flex-wrap gap-2">
+        {
+          frontmatter.tags.map((tag) => (
+            <span class="bg-[#3D86EF] text-[#fff] px-3 py-1 rounded-md">
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </span>
+          ))
+        }
+      </div>
+      <div class="prose mt-5">
+        <slot />
+      </div>
+    </div>
+
+    <div class="md:w-[1440px] max-w-[1440px] m-auto bg-white p-10 mt-5">
+      {
+        frontmatter.release ? (
+          <div class="px-2 py-1 text-blue-500">
+            请留下您对该主题或插件的意见或建议，我们以用户体验为主要目标，感谢支持!
+          </div>
+        ) : (
+          <div class="px-2 py-1 text-yellow-400">
+            温馨提示：
+            <span class="font-semibold">该主题暂未发布</span>，请留下您的建议或需求，我们会及时采纳并融入到开发中去.
+          </div>
+        )
+      }
+      <Comment client:load />
+    </div>
+  </section>
+</BaseLayout>

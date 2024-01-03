@@ -1,3 +1,7 @@
+html {
+  @apply font-sans;
+}
+
 .show-menu {
   @apply md:bg-[unset] bg-black/40 md:h-auto h-screen z-50;
 }
@@ -5,4 +9,3 @@
 .show-menu ul {
   @apply md:bg-[unset] bg-blue-500/60 left-0;
 }
-

@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/Users/xujiaxin/Desktop/zblog-project/astro/website",
     "paths": {
       "@components/*": [
         "src/components/*"
@@ -12,6 +12,8 @@
       "@layouts/*": [
         "src/layouts/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
