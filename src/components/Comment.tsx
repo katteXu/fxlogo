@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 const Twikoo: React.FC = () => {
+  // TODO：移除节点报错 修改Bug
   useEffect(() => {
     // 通过 CDN 引入 twikoo js 文件
     const cdnScript = document.createElement("script");
@@ -13,7 +14,7 @@ const Twikoo: React.FC = () => {
       const initScript = document.createElement("script");
       initScript.innerHTML = `
             twikoo.init({
-              envId: "https://comment.fxlogo.com/.netlify/functions/twikoo",
+              envId: "https://comment.fxlogo.com",
               el: '#twikoo-comment'
             });
           `;
