@@ -39,7 +39,7 @@ meta = { ...default_meta, ...meta };
     <meta name="keywords" content={meta.keywords} />
     <meta name="description" content={meta.description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{meta.title}-{pageTitle}</title>
+    <title>{`${meta.title}-${pageTitle}`}</title>
     <link rel="sitemap" href="/sitemao-index.xml" />
     
     <ViewTransitions />
