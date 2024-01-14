@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Vote from "@components/Vote.tsx";
-import Comment from "@components/Comment.tsx";
+import Comment from "@components/Comment.astro";
 interface Props {
   frontmatter: {
     id: number;
@@ -58,11 +57,12 @@ const { frontmatter } = Astro.props;
         ) : (
           <div class="px-2 py-1 text-yellow-400">
             温馨提示：
-            <span class="font-semibold">该主题暂未发布</span>，请留下您的建议或需求，我们会及时采纳并融入到开发中去.
+            <span class="font-semibold">该主题暂未发布</span>
+            ，请留下您的建议或需求，我们会及时采纳并融入到开发中去.
           </div>
         )
       }
-      <Comment client:load />
+      <Comment />
     </div>
   </section>
 </BaseLayout>

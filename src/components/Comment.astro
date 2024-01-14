@@ -1,0 +1,14 @@
+---
+
+---
+
+<div id="twikoo-comment"></div>
+<script src="/scripts/twikoo.all.min.js" async></script>
+<script is:inline>
+  document.addEventListener("astro:page-load", function () {
+    twikoo.init({
+      envId: "https://comment.fxlogo.com",
+      el: "#twikoo-comment",
+    });
+  });
+</script>
