@@ -2,6 +2,8 @@
   "name": "fxlogo",
   "type": "module",
   "version": "0.0.2",
+  "repository": "https://github.com/katteXu/fxlogo.git",
+  "homepage": "http://fxlogo.com",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
